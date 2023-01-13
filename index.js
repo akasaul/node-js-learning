@@ -62,6 +62,10 @@ const server = http.createServer((req, res) => {
                 res.writeHead(500);
                 res.end(`Server Error: ${err.code}`);
             }
+        } else {
+            //Success 
+            res.writeHead(200, {'Content-Type': contentType});
+            res.end(content);
         }
     })
 })
